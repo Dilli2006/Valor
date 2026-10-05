@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lunor AppStudio: Architecture, Setup & Technologies
 
-## Getting Started
+Lunor AppStudio is an AI-powered App Development platform extending Lunor's learning ecosystem to cross-platform mobile creation (Expo / React Native).
 
-First, run the development server:
+---
 
+## 1. Quick Start
+
+### Prerequisites
+- Node.js 18+
+- npm / pnpm / yarn
+
+### Installation
 ```bash
+# Navigate to the project directory
+cd lunor-appstudio
+
+# Install dependencies
+npm install
+
+# Start local development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## 2. Environment Configuration
+
+To enable live AI generation, copy the sample environment file:
+```bash
+cp .env.example .env.local
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Populate your Google Gemini API key:
+```env
+GEMINI_API_KEY="AIzaSy..."
+GEMINI_MODEL="gemini-2.5-flash"
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+> **Note on Zero-Key Demo Mode**: If no API key is provided, AppStudio operates seamlessly in sample mode with pre-built benchmark projects (**CampusPulse** and **Streakly**) showcasing all 6 pipeline stages end-to-end.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 3. The 6-Stage Pipeline
 
-To learn more about Next.js, take a look at the following resources:
+1. **Understand**: Converts user ideas into structured briefs with assumptions, risks, and clarifying questions.
+2. **Plan**: Establishes MoSCoW feature sets, screen flows, data entities, and stack rationale.
+3. **Build**: Generates runnable Expo React Native projects in 3 phases (Skeleton → Screens → Polish).
+4. **Explain**: Provides file summaries, plan decision justifications, and line-level explanations on selection.
+5. **Learn**: Creates an app-specific curriculum with step-by-step rebuild lessons, hands-on challenges, and a 5-question scored quiz.
+6. **Preview**: Renders an interactive iPhone mockup frame with live screen switching and Expo Snack embed.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 4. Documentation & Compliance
+See the in-app **[AI Tools & Technologies Disclosure](/disclosure)** page for full details on model architectures, schemas, and responsible AI guardrails.
