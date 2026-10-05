@@ -55,4 +55,4 @@ GEMINI_MODEL="gemini-2.5-flash"
 ---
 
 ## 4. Documentation & Compliance
-See the in-app **[AI Tools & Technologies Disclosure](/disclosure)** page for full details on model architectures, schemas, and responsible AI guardrails.
+See the **[AI Tools & Technologies Disclosure](DISCLOSURE.md)** file (or the in-app `/disclosure` page when running locally) for full details on model architectures, schemas, and responsible AI guardrails.
