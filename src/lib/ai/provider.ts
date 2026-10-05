@@ -14,13 +14,17 @@ export function getModels(): ModelHandle[] {
   const geminiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_GENERATIVE_AI_API_KEY;
   if (geminiKey) {
     const google = createGoogleGenerativeAI({ apiKey: geminiKey });
-    const primary = process.env.GEMINI_MODEL || "gemini-2.5-flash";
+    const primary = process.env.GEMINI_MODEL || "gemini-3.5-flash-lite";
+    const thinkingBudget = Number(process.env.GEMINI_THINKING_BUDGET ?? 0);
+    const providerOptions = thinkingBudget > 0
+      ? { google: { thinkingConfig: { thinkingBudget } } }
+      : undefined;
     models.push({
       id: `google/${primary}`,
       model: google(primary),
-      providerOptions: { google: { thinkingConfig: { thinkingBudget: Number(process.env.GEMINI_THINKING_BUDGET ?? 0) } } },
+      ...(providerOptions ? { providerOptions } : {}),
     });
-    const secondary = process.env.GEMINI_FALLBACK_MODEL || "gemini-2.5-flash-lite";
+    const secondary = process.env.GEMINI_FALLBACK_MODEL || "gemini-2.5-flash";
     if (secondary !== primary) models.push({ id: `google/${secondary}`, model: google(secondary) });
   }
   if (process.env.FALLBACK_API_KEY) {
