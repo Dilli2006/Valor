@@ -29,7 +29,7 @@ export async function POST(req: Request) {
     schema: BuildPhaseSchema,
     system: buildSystem,
     prompt: buildUser(brief, plan, phase, existing),
-    maxOutputTokens: phase === "screens" ? 20000 : 10000,
+    maxOutputTokens: 8192,
     timeoutMs: 110_000,
     cacheKey: hashKey(BUILD_PROMPT_VERSION, phase, brief, plan, existing.map((f) => [f.path, f.content.length])),
     progress: PROGRESS[phase],

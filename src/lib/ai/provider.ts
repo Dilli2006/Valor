@@ -20,7 +20,7 @@ export function getModels(): ModelHandle[] {
       model: google(primary),
       providerOptions: { google: { thinkingConfig: { thinkingBudget: Number(process.env.GEMINI_THINKING_BUDGET ?? 0) } } },
     });
-    const secondary = process.env.GEMINI_FALLBACK_MODEL || "gemini-2.0-flash";
+    const secondary = process.env.GEMINI_FALLBACK_MODEL || "gemini-2.5-flash-lite";
     if (secondary !== primary) models.push({ id: `google/${secondary}`, model: google(secondary) });
   }
   if (process.env.FALLBACK_API_KEY) {

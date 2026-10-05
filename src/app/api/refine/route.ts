@@ -20,7 +20,7 @@ export async function POST(req: Request) {
     schema: RefineSchema,
     system: refineSystem,
     prompt: refineUser(request, parsed.data.plan, parsed.data.files),
-    maxOutputTokens: 16000,
+    maxOutputTokens: 8192,
     timeoutMs: 110_000,
     progress: ["Finding the files affected by your change…", "Applying the smallest correct edit…"],
     postProcess: (r) => ({
