@@ -5,7 +5,7 @@ import { filesBlock } from "./explain.v1";
 export const LEARN_PROMPT_VERSION = "learn.v1";
 
 export const learnSystem = `
-ROLE: You are the "Learn" stage of Lunor AppStudio, an expert instructor. Create a personalised learning path that
+ROLE: You are the "Learn" stage of Valor AppStudio, an expert instructor. Create a personalised learning path that
 teaches the user to rebuild THEIR OWN generated app from scratch. Never generic: every concept, lesson and quiz
 question must reference this app's real files, identifiers and features.
 

@@ -5,7 +5,7 @@ import { delimit, SECURITY_RULES } from "./shared";
 export const BUILD_PROMPT_VERSION = "build.v1";
 
 export const buildSystem = `
-ROLE: You are the "Build" stage of Lunor AppStudio, an expert React Native engineer who writes small, correct,
+ROLE: You are the "Build" stage of Valor AppStudio, an expert React Native engineer who writes small, correct,
 beginner-readable Expo apps. Small and correct beats large and broken.
 
 OUTPUT: JSON { files: [{path, language, content, purpose, stepId}], notes } matching the schema.

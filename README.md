@@ -1,6 +1,6 @@
-# Lunor AppStudio: Architecture, Setup & Technologies
+# Valor AppStudio: Architecture, Setup & Technologies
 
-Lunor AppStudio is an AI-powered App Development platform extending Lunor's learning ecosystem to cross-platform mobile creation (Expo / React Native).
+Valor AppStudio is an AI-powered App Development platform engineered for creating cross-platform mobile apps (Expo / React Native) with complete architectural transparency.
 
 ---
 
@@ -12,8 +12,9 @@ Lunor AppStudio is an AI-powered App Development platform extending Lunor's lear
 
 ### Installation
 ```bash
-# Navigate to the project directory
-cd lunor-appstudio
+# Clone the repository
+git clone https://github.com/Dilli2006/Valor.git
+cd Valor
 
 # Install dependencies
 npm install
@@ -38,7 +39,7 @@ GEMINI_API_KEY="AIzaSy..."
 GEMINI_MODEL="gemini-2.5-flash"
 ```
 
-> **Note on Zero-Key Demo Mode**: If no API key is provided, AppStudio operates seamlessly in sample mode with pre-built benchmark projects (**CampusPulse** and **Streakly**) showcasing all 6 pipeline stages end-to-end.
+> **Note on Zero-Key Demo Mode**: If no API key is provided, Valor AppStudio operates seamlessly in sample mode with pre-built benchmark projects (**CampusPulse** and **Streakly**) showcasing all 6 pipeline stages end-to-end.
 
 ---
 

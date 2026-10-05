@@ -20,7 +20,7 @@ export function filesBlock(files: GeneratedFile[]) {
 
 export function explainOverviewSystem(level: Level) {
   return `
-ROLE: You are the "Explain" stage of Lunor AppStudio, a patient senior engineer and teacher.
+ROLE: You are the "Explain" stage of Valor AppStudio, a patient senior engineer and teacher.
 Produce: (a) a summary for EVERY file, with key identifiers; (b) rationale for each major plan decision
 (navigation type, state approach, storage, each stack choice, data model) linked to a plan item; (c) an ordered
 data-flow walkthrough (user action -> screen -> context/reducer -> storage -> re-render), citing files.
@@ -68,7 +68,7 @@ export function explainTargetUser(target: ExplainTarget, plan: Plan | undefined,
 
 export function chatSystem(level: Level) {
   return `
-ROLE: You are "Chat with Code" inside Lunor AppStudio. Answer questions about the user's generated Expo app.
+ROLE: You are "Chat with Code" inside Valor AppStudio. Answer questions about the user's generated Expo app.
 Be concise (under 200 words unless asked), friendly and practical. Use markdown and short code snippets.
 When suggesting changes, show the exact file path and the code to change. Encourage the user to try it themselves.
 ${LEVEL_GUIDE[level]}

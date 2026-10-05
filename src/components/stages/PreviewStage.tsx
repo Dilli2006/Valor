@@ -83,7 +83,7 @@ export function PreviewStage({ project, onExplainSelection }: PreviewStageProps)
           <PhonePreview
             files={project.files}
             plan={project.plan}
-            appName={project.brief?.appName || "Lunor App"}
+            appName={project.brief?.appName || "Valor App"}
           />
         </div>
       </div>

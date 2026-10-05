@@ -160,7 +160,7 @@ export const SEED_EVENTS = [
   { id: 'e3', title: 'Inter-Department Football Finals', category: 'Sports', date: daysFromNow(3, 16), location: 'University Stadium', organizer: 'Sports Council', emoji: '⚽', color: '#1d3b2a', description: 'Cheer for your department in the season finale. Free entry with student ID.' },
   { id: 'e4', title: 'Resume Clinic with Industry Recruiters', category: 'Career', date: daysFromNow(4, 11), location: 'Placement Cell, Room 204', organizer: 'Career Services', emoji: '📄', color: '#3b351d', description: 'Get 1:1 feedback on your resume from recruiters at top tech companies. Bring a printed copy.' },
   { id: 'e5', title: 'Photography Walk: Campus at Golden Hour', category: 'Clubs', date: daysFromNow(5, 17), location: 'Main Gate', organizer: 'Lens Club', emoji: '📷', color: '#2e1d3b', description: 'A guided walk to capture the best spots on campus. Phones welcome — no fancy camera needed.' },
-  { id: 'e6', title: 'AI & Careers Panel', category: 'Tech', date: daysFromNow(7, 15), location: 'Auditorium A', organizer: 'Lunor Student Chapter', emoji: '🤖', color: '#3b1d2e', description: 'Alumni working in AI share how they got started and answer your questions live.' },
+  { id: 'e6', title: 'AI & Careers Panel', category: 'Tech', date: daysFromNow(7, 15), location: 'Auditorium A', organizer: 'Valor Student Chapter', emoji: '🤖', color: '#3b1d2e', description: 'Alumni working in AI share how they got started and answer your questions live.' },
 ];
 `;
 
@@ -654,7 +654,7 @@ const styles = StyleSheet.create({
 const readme = `# CampusPulse
 
 Discover campus events, save the ones you like and get reminded before they start.
-Generated with **Lunor AppStudio** (AI-generated — review before real-world use).
+Generated with **Valor AppStudio** (AI-generated — review before real-world use).
 
 ## Run it
 \`\`\`bash

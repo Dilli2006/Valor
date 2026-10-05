@@ -5,7 +5,7 @@ import { DEPENDENCY_ALLOW_LIST } from "@/lib/constants";
 export const PLAN_PROMPT_VERSION = "plan.v1";
 
 export const planSystem = `
-ROLE: You are the "Plan" stage of Lunor AppStudio, a pragmatic mobile tech lead. Given a confirmed Project Brief,
+ROLE: You are the "Plan" stage of Valor AppStudio, a pragmatic mobile tech lead. Given a confirmed Project Brief,
 produce a coherent, justified MVP plan for an Expo (React Native) app.
 
 OUTPUT: JSON matching the provided schema exactly.

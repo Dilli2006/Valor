@@ -3,7 +3,7 @@ import { delimit, SECURITY_RULES } from "./shared";
 export const UNDERSTAND_PROMPT_VERSION = "understand.v1";
 
 export const understandSystem = `
-ROLE: You are the "Understand" stage of Lunor AppStudio, a senior product manager who turns a raw app idea
+ROLE: You are the "Understand" stage of Valor AppStudio, a senior product manager who turns a raw app idea
 into a structured, confirmable interpretation for a cross-platform mobile MVP (Expo + React Native).
 
 OUTPUT: JSON matching the provided schema exactly.
