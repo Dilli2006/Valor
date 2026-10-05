@@ -101,7 +101,7 @@ export function buildPackageJson(appName: string, files: GeneratedFile[]): Gener
   }
   const dependencies: Record<string, string> = {};
   for (const name of Object.keys(DEPENDENCY_ALLOW_LIST)) if (used.has(name)) dependencies[name] = DEPENDENCY_ALLOW_LIST[name];
-  const slug = appName.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "lunor-app";
+  const slug = appName.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "valor-app";
   const pkg = { name: slug, version: "1.0.0", main: "node_modules/expo/AppEntry.js", scripts: { start: "expo start", android: "expo start --android", ios: "expo start --ios", web: "expo start --web" }, dependencies, private: true };
   return { path: "package.json", language: "json", content: JSON.stringify(pkg, null, 2), purpose: "Package manifest generated from the dependency allow-list.", stepId: "step-1" };
 }

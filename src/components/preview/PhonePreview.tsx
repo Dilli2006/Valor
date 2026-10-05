@@ -22,9 +22,21 @@ export function PhonePreview({ files, plan, appName = "Generated App" }: PhonePr
   // Filter for screens in plan
   const activeScreen = plan?.screens?.find((s) => s.id === selectedScreenId) || plan?.screens?.[0];
 
-  // Prepare code for Expo Snack embed
+  // Prepare code and dependencies for Expo Snack
   const appJs = files.find((f) => f.path === "App.js")?.content || "";
   const encodedCode = encodeURIComponent(appJs);
+
+  const detectedDeps = new Set<string>(["expo-status-bar", "react-native-safe-area-context"]);
+  for (const f of files) {
+    if (f.content.includes("@react-navigation/native")) detectedDeps.add("@react-navigation/native");
+    if (f.content.includes("@react-navigation/bottom-tabs")) detectedDeps.add("@react-navigation/bottom-tabs");
+    if (f.content.includes("@react-navigation/native-stack")) detectedDeps.add("@react-navigation/native-stack");
+    if (f.content.includes("react-native-screens")) detectedDeps.add("react-native-screens");
+    if (f.content.includes("lucide-react-native")) detectedDeps.add("lucide-react-native");
+    if (f.content.includes("@expo/vector-icons")) detectedDeps.add("@expo/vector-icons");
+  }
+  const depsParam = encodeURIComponent(Array.from(detectedDeps).join(","));
+  const snackUrl = `https://snack.expo.dev?code=${encodedCode}&dependencies=${depsParam}&name=${encodeURIComponent(appName)}&platform=web`;
 
   return (
     <div className="flex flex-col items-center justify-center w-full h-full max-w-sm mx-auto select-none py-2">
@@ -63,17 +75,35 @@ export function PhonePreview({ files, plan, appName = "Generated App" }: PhonePr
               <Sparkles size={28} className="text-accent mb-2 animate-bounce" />
               <h4 className="font-bold text-sm text-fg">Expo Snack Embed</h4>
               <p className="text-xs text-muted mt-1 leading-relaxed">
-                Render the full multi-file Expo project directly in the official Expo web runtime.
+                Opens Expo Snack with preloaded dependencies and your root <code className="text-accent font-mono text-[10px]">App.js</code>.
               </p>
-              <a
-                href={`https://snack.expo.dev?code=${encodedCode}`}
-                target="_blank"
-                rel="noreferrer"
-                className="btn-primary mt-4 text-xs px-3.5 py-1.5 flex items-center gap-1.5"
-              >
-                <span>Open in Snack</span>
-                <ExternalLink size={12} />
-              </a>
+              
+              <div className="bg-surface p-2.5 rounded-xl border border-line my-3 text-left w-full text-[11px] space-y-1.5">
+                <div className="font-semibold text-fg flex items-center gap-1">
+                  <span>💡</span> Multi-File Project Note:
+                </div>
+                <p className="text-muted text-[10px] leading-normal">
+                  Valor creates a full modular app (screens, state, navigation). To preview with zero setup, use <strong className="text-fg">Mockup Live View</strong> or download the <strong className="text-fg">ZIP</strong> (<code className="text-accent font-mono">npx expo start</code>).
+                </p>
+              </div>
+
+              <div className="flex flex-col gap-2 w-full">
+                <a
+                  href={snackUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-primary text-xs px-3.5 py-2 flex items-center justify-center gap-1.5 w-full"
+                >
+                  <span>Open in Snack (Web)</span>
+                  <ExternalLink size={12} />
+                </a>
+                <button
+                  onClick={() => setMode("interactive")}
+                  className="btn-secondary text-xs px-3.5 py-1.5 w-full"
+                >
+                  Switch to Mockup Live View
+                </button>
+              </div>
             </div>
           ) : (
             <div className="flex-1 flex flex-col">
